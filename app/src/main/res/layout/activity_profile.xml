@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.Design.NoActionBar"
+    tools:context=".ProfileActivity">
+
+    <!--di bawah ini adalah merupakan komponen view
+     1. komponen view di bawah ini diberikan id nya adalah view
+     2. width dari view ini dibuat menjadi sesuai dengan screen size,
+      sedangkan height dari view ini adalah 170dp
+     3. background view ini adalah custom_rectangle, merupakan resource file yang sudah dibuat dan diletakkan didrawable
+     4. dan posisi nya diletakkan di tengah atas dari screen-->
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:background="@drawable/custom_rectangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!--komponen berikut merupakan salah satu komponen dari teks yaitu teks view
+     1. id untuk teksview di bawah ini adalah textView
+     2. width dan height nya dibuat mengikuti objek yang ada di dalamnya
+     3. marginTop diberikan untuk membuat jarak teksView dengan batas atas screen, yaitu sebesar 20dp
+     4. background yang diberikan adalah background dengan nama pinkColor
+     5. posisi dari teks adalah center horizontal, yaitu berada di tengah garis horizontal
+     6. content teksnya adalah WISATA \n YOGYAKARTA
+     7. teks diberikan setting berupa sizenya 28sp, warna cream, fontnya adalah rubik_medium, style teksnya adalah bold dan spasinya adalah 0.025
+     8. posisi dari teks diletakkan di sisi bawah dari komponen view-->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/pinkColor"
+        android:gravity="center_horizontal"
+        android:letterSpacing="0.025"
+        android:text="WISATA \nYOGYAKARTA"
+        android:textColor="@color/cream"
+        android:textSize="28sp"
+        android:fontFamily="@font/rubik_medium"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--1. komponen berikut merupakan komponen CardView dengan idnya adalah cardView
+     2. width dari cardView ini dibuat sesuai ukuran layar, sedangkan height atau panjangnya adalah 128dp
+     3. marginStart, margin top dan marginEnd masing-masing diberikan 16dp
+     4. setiap siku dari cardView ini dibuat melengkung dengan radius 20dp
+     5. dan posisi dari cardView ini adalah tepat di bawah dari komponen textView-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:elevation="12dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <!-- kemudian di bawah ini adalah membuat ConstraintLayout dengan
+        lebar dan tingginya disesuaikan dengan screen size. Dan juga background dari
+        layout ini adalah berwarna putih-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <!--kemudian di dalam layout Constraintlayout berisi beberapa komponen, yaitu diantaranya :
+             1. komponen yang pertama adalah textView dengan id yang diberikan adalah textView2
+             2. lebar dan tinggi dari komponen textView2 disesuaikan dengan object size
+             3. marginTop dan marginStart nya adalah sebesar 16dp
+             4. content textnya adalah nama untuk profile, "CAMELLIA ALFINA HANIF"
+             5. teks diberikan beberapa pengaturan yaitu font dari teks adalah rubik_medium, size teksnya adalah 16dp
+             style teksnya adalah bold dan warna dari teks adalah warna coklat
+             6. posisi dari textView2 ini adalah disisi top dari screen layout ConstraintLayout-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="CAMELLIA ALFINA HANIF"
+                android:textAllCaps="true"
+                android:fontFamily="@font/rubik_medium"
+                android:textColor="@color/pinkColor"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <!-- 1. komponen yang kedua adalah textView juga dengan id textView3
+            2. isi teks untuk textView3 ini adlah "Universitas Teknologi Digital Indonensia"
+            3. margin top diberikan sebesar 4dp
+            4. textView3 terdapat beberapa pengaturan untuk teks, diantaranya adalah warna teksnya adalah yellow_gold,
+            text size nya adalah 12dp, jenis fontnya adalah rubik_medium
+            5. posisi textView3 adalah berada di bawah textview2-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/rubik_medium"
+                android:text="Universitas Teknologi Digital Indonesia"
+                android:textColor="@color/yellow_gold"
+                android:textSize="12dp"
+                app:layout_constraintStart_toStartOf="@id/textView2"
+                app:layout_constraintTop_toBottomOf="@id/textView2"/>
+
+            <!-- komponen yang ketiga adalah komponen MateialButton untuk menuju kehalaman profile
+            1. lebar dan tinggi dari komponen ini diberikan menyesuaikan dengan size object yang ada di dalamnya
+            2. id nya adalah todoB
+            3. marginStartnya adalah 16dp sedangkan margin bottomnya adalah 8dp
+            4. di dalam button terdapat teks "PROFILE" dengan warna teksnya adalah cream, font rubik_medium,
+            5. posisi komponen diletakkan di tenggah-tengah dari materialButton-->
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/todoB"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="PROFILE"
+                android:textColor="@color/cream"
+                android:fontFamily="@font/rubik_medium"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <!-- komponen yang keempat adalah komponen cardView untuk menampilkan gambar profile
+            1. id untuk cardView ini adalah ProfileB
+            2. lebar dan tinggi untuk cardview ini adalah sebesar 100dp
+            3. padding yang diberikan adalah sebesar 16dp
+            4. kemudian cardview ini dibuat menjadi shape lingkaran dengan memberikan corner radius sebesar 100dp
+            5. posisi dari cardview ini adalah berada disisi kanan dari layout constraintLayout-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profileB"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp"
+                app:cardCornerRadius="100dp"
+                android:elevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!-- di dalam komponen cardview profileB terdapat komponen widgets berupa imageView
+                1.lebar dan tinggi dari imageview ini disesuaikan dengan screen size
+                2. tipe scale nya adalah centerCrop
+                3. dan gambar yang diberikan untuk dimuat dalam komponen umage view ini adalah gambar dengan nama profile
+                yang sebelumnya sudah dimuat di drawable-->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/profile" />
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- komponen di bawah berikut adalah komponen dari layouts yaitu Linearlayouts
+    1. diberikan id untuk layouts ini adalah linearLayouts
+    2. lebar dari layout ini disesuaikan dengan screen size, sedangkan tingginya disesuaikan dengan objek
+    3. jarak dari batas atas screen (marginTop) diberikan sebesar 15dp
+    4. paddiing untuk layout ini adalah 10dp
+    5. orientasinya adlah horizontal-->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+        <!-- di dalam LinearLayouts di atas, terdapat layout lagi di dalamnya yaitu Relativelayouts
+        lebar dan tinggi dari Relativelaout ini disesuaikan dengan screen size, dan juga diberikan padding
+        sebesar 10dp untuk layout ini -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <!-- di dalam layout RelativeLayout terdapat textview dengan id nya adalah textView4
+             1. width dari textview ini adalah disesuaikan dengan screen size, sedangkan height nya
+             disesuaikan dengan ukuran objek
+             2. layout_gravity yang diberikan adalah sisi kiri
+             3. content teks untuk textview ini adalh Popular
+             4. teks diberikan beberapa setting, di antaranya yaitu fontnya adalah rubik_medium,
+             warna font nya adalah cream, size 16dp dan text style nya adalah bold-->
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/rubik_medium"
+                android:text="Popular"
+                android:textColor="@color/cream"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <!-- komponen di bawah ini adalah komponen cardView yang digunakan untuk memberi
+             pengaturan layouts untuk image view yang ada di dalamnya
+             1. cardview di bawah ini mempunyai id cardSeni
+             2. lebarnya disesuaikan dengan screen size, sedangkan   tingginya adalah 170dp
+             3. posisi card view ini diletakkan tepat di bawah textView4
+             4. margin top diberikan sebesar 10 dp, sedangkan margin bottomnya adlah 8dp
+             5. kemudian diberikan juga corner radiusnya adalah 15dp-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardSeni"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_below="@+id/textView4"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp"
+                android:clickable="true"
+                android:elevation="0dp"
+                android:focusable="true"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+                <!-- komponen imageview di bawah ini digunakan untuk menampilkan gambar dengan nama file
+                candi, dimana image/ gambar candi sudah tersedia di dalam resource drawable. untuk
+                lebar dan tinggi dari imageview ini disesuaikan dengan screen size,
+                sementara itu scaletype yang diberikan untuk gambar yang dimuat adalah centerCrop-->
+                <ImageView
+                    android:id="@+id/imgSeni"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/candi" />
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- komponen di bawah berikut adalah komponen dari layouts yaitu Linearlayouts
+    1. diberikan id untuk layouts ini adalah linearLayouts2
+    2. lebar dari layout ini disesuaikan dengan screen size, sedangkan tingginya disesuaikan dengan objek
+    3. paddiing untuk layout ini adalah 10dp
+    4. orientasinya adlah horizontal-->
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <!-- di dalam LinearLayouts di atas, terdapat layout lagi di dalamnya yaitu Relativelayouts
+        lebar dan tinggi dari Relativelaout ini disesuaikan dengan object size, -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!-- di dalam layout RelativeLayout terdapat textview dengan id nya adalah textView5
+             1. width dari textview ini adalah disesuaikan dengan screen size, sedangkan height nya
+             disesuaikan dengan ukuran objek
+             2. layout_gravity yang diberikan adalah sisi kiri
+             3. content teks untuk textview ini adalh News
+             4. teks diberikan beberapa setting, di antaranya yaitu fontnya adalah rubik_medium,
+             warna font nya adalah cream, size 16dp dan text style nya adalah bold-->
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/rubik_medium"
+                android:layout_weight="1"
+                android:text="News"
+                android:textColor="@color/cream"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <!-- komponen di bawah ini adalah komponen cardView yang digunakan untuk memberi
+            pengaturan layouts untuk image view yang ada di dalamnya
+            1. cardview di bawah ini mempunyai id cardNews
+            2. lebarnya disesuaikan dengan screen size, sedangkan   tingginya adalah 180dp
+            3. posisi card view ini diletakkan tepat di bawah textView4
+            4. margin top diberikan sebesar 10 dp, sedangkan margin bottomnya adlah 8dp
+            5. kemudian diberikan juga corner radiusnya adalah 15dp-->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardNews"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_below="@+id/textView5"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp"
+                android:clickable="true"
+                android:elevation="0dp"
+                android:focusable="true"
+                app:cardCornerRadius="15dp">
+
+                <!-- komponen imageview di bawah ini digunakan untuk menampilkan gambar dengan nama file
+                candi, dimana image/ gambar candi sudah tersedia di dalam resource drawable. untuk
+                lebar dan tinggi dari imageview ini disesuaikan dengan screen size,
+                sementara itu scaletype yang diberikan untuk gambar yang dimuat adalah centerCrop-->
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ratu_boko" />
+            </androidx.cardview.widget.CardView>
+
+            <!--kemudian komponen yang terakhir adalah komponen teksview untuk menambahkan teks keterangan nama tempat dari gambar di atasnya
+             1. lebar disetting menyesuaikan dengan screen size, sedangkan tingginga menyesuaikan dengan ukuran objek
+             2. content teksnya adalah "Candi Ratu Boko"
+             3. style teksnya adalah italic dengan warna teksnya adalah hitam
+             4. posisi teks adalah berada di tengah dan berada di bawah cardNews-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cardNews"
+                android:text="Candi Ratu Boko"
+                android:textColor="@color/black"
+                android:textStyle="italic"
+                android:textSize="12dp"
+                android:textAlignment="center"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

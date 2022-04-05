@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Wisata Jogja</string>
+    <string name="log_in">Log In</string>
+    <string name="seni_name">Nama Seni</string>
+    <string name="detail">Detail</string>
+    <string name="pantai_name">Nama Pantai</string>
+    <string name="detail_pantai">Detail</string>
+    <string name="list">List</string>
+    <string name="grid">Grid</string>
+    <string name="with_cardview">with CardView</string>
+    <string name="favorite">Favorite</string>
+    <string name="share">Share</string>
+    <string name="candi_name">Nama Candi</string>
+    <string name="detail_candi">Detail</string>
+    <string name="content_text">Istana Ratu Boko adalah sebuah bangunan megah yang dibangun pada masa pemerintahan Rakai Panangkaran, salah satu keturunan Wangsa Syailendra. Istana yang awalnya bernama Abhayagiri Vihara (berarti biara di bukit yang penuh kedamaian) ini didirikan untuk tempat menyepi dan memfokuskan diri pada kehidupan spiritual. Berada di istana ini, anda bisa merasakan kedamaian sekaligus melihat pemandangan kota Yogyakarta dan Candi Prambanan dengan latar Gunung Merapi.</string>
+    <string name="content_umur">Rp 40.000</string>
+    <string name="content_umur2">Rp 20.000</string>
+    <string name="content_waktu">Senin - Minggu: pukul 06.00 - 17.00 WIB</string>
+    <string name="heading">Kemegahan di Bukit Penuh Kedamaian</string>
+    <string name="htm">Harga Tiket Masuk Candi Ratu Boko</string>
+    <string name="umur">Dewasa</string>
+    <string name="umur2">Anak-anak</string>
+    <string name="waktu">Jam Buka</string>
+    <string name="penulis">Ditulis oleh</string>
+    <string name="my_name">Camellia Alfina Hanif</string>
+    <string name="copyright">Copyright © 2003 - 2022 YogYes.com.</string>
+    <string name="nama_tempat">RATU BOKO</string>
+    <string name="dummy_photos">6 photos</string>
+</resources>

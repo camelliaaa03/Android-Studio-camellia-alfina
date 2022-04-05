@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/cream"
+    tools:context=".MainActivity">
+
+    <!--halaman ini merupakan halaman untuk login aplikasi -->
+
+    <!--komponen yang pertama adalah textview dengan content teks nya adalah "Please Login Here"
+     1. tata letak teksview ini adalah berada di tengah
+     2. ukuran teksnya adalah 25sp, dengan jenis font nya rubik, style teksnya adalah bold-normal dan warna teksnya adalah coklat
+     3. lebar dari text view ini disesuaikan dengan screensize dan tingginya disesuaikan dengan size objek-->
+    <TextView
+        android:text="Please Login Here^^"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:layout_marginTop="50dp"
+        android:textStyle="bold|normal"
+        android:fontFamily="@font/rubik"
+        android:textColor="@color/pinkColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <!--komponen yang kedua adalah komponen cardview
+     1. komponen cardview ini dibuat melengkung disetiap sudutnya dengan radius lengkungnya adalah 25dp
+     2. posisi dari cardview ini diletakkan di tengah
+     3. kkomponen cardview ini diberikan margin top 50dp, marginstart dan marginEnd nya sebesar 38dp
+     4. lebar dari cardview disesuaikan dengan ukuran screen sedangkan tinginya disesuaikan dengan konten-->
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="25dp"
+        app:cardElevation="10dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginEnd="38dp"
+        app:cardUseCompatPadding="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- di dalam cardview terdapat LinearLayout dengan orientasinya adalah vertikal
+        lebar dari layout ini menyesuaikan dengan lebar layar, sedangkan tinggi dari layoutnya adalah
+        disesuaikan dengan tinggi konten yang ada di dalamnya-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--kemudian di dalam linearLayout di atas, ada layout lagi dengan tipe linearLayout
+             1. orientasi dari layout ini adalah horizontal, dan posisi di dalam view diatur ke center
+             2. posisi layout ini adalah di tengah
+             3. LinearLayout ini diberikan margin top sebesar 30dp serta marginStart dan marginEndnya
+             diberikan nilai sebesar 20dp
+             4. background untuk komponen linearLayout ini adalah switch_tumbs yang sudah ada di dalam resource drawable
+             5. lebar dari layout ini disesuaikan dengan lebar layar sedangkan tingginya disesuaikan dengan isi konten-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:weightSum="2"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/switch_tumbs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Di dalam linearLayout terdapat komponen Textview dan diberi id Login
+                 1. content teks terdapat di dalam file xml string dengan nama log_in
+                 2. teks di dalam teks view ini diberikan beberapa setting berupa teks alignmentnya adalah center
+                    warna teks menggunakan warna yang terdapat dalam resource file color dengan nama TextColor
+                    jenis font yang digunakan adalah font rubik, ukuran dari teksnya adalah 16sp, style teksnya adalah bold
+                 3. posisi dari teksview ini adalah di tengah,
+                 4. komponen textView ini diberikan setting padding bottom, padding right, dan padding left sebesar 15dp-->
+                <TextView
+                    android:id="@+id/logIn"
+                    android:text="@string/log_in"
+                    android:paddingTop="5dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/textColor"
+                    android:fontFamily="@font/rubik"
+                    android:textSize="16sp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:paddingBottom="5dp"
+                    android:paddingRight="15dp"
+                    android:paddingLeft="15dp"
+                    android:textStyle="bold|normal"
+                    android:background="@drawable/switch_trcks"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <!-- Di dalam linearLayout terdapat komponen Textview dan diberi id SignUp
+                 1. content teks terdapat di dalam file xml string dengan nama signUp
+                 2. teks di dalam teks view ini diberikan beberapa setting berupa teks alignmentnya adalah center
+                    warna teks menggunakan warna yang terdapat dalam resource file color dengan nama TextColor
+                    jenis font yang digunakan adalah font rubik, ukuran dari teksnya adalah 16sp, style teksnya adalah bold
+                 3. posisi dari teksview ini adalah di tengah,
+                 4. komponen textView ini diberikan setting padding bottom, padding right, dan padding left sebesar 15dp-->
+                <TextView
+                    android:id="@+id/singUp"
+                    android:text="Sing Up"
+                    android:paddingTop="5dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/pinkColor"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/rubik"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:paddingBottom="5dp"
+                    android:paddingRight="15dp"
+                    android:paddingLeft="15dp"
+                    android:textStyle="bold|normal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <!--komponen berikut adalah komponen linearlayout yang di dalamnya berisi
+             material TextInputlayout dan textInputeditText untuk inputan berupa username atau
+             email dari user-->
+            <LinearLayout
+                android:id="@+id/logInLayout"
+                android:background="@color/white"
+                android:padding="25dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:hint="Email or User Name"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    app:shapeAppearanceOverlay="@style/Button4"
+                    app:hintTextColor="#4E4A4A"
+                    app:boxStrokeColor="#4E4A4A"
+                    app:boxStrokeWidth="1dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:inputType="textPersonName|textEmailAddress"
+                        android:id="@+id/eMail"
+                        android:ems="10"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/rubik"
+                        android:textStyle="normal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:hint="Password"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    app:shapeAppearanceOverlay="@style/Button4"
+                    app:hintTextColor="#4E4A4A"
+                    app:boxStrokeColor="#4E4A4A"
+                    app:boxStrokeWidth="1dp"
+                    app:endIconMode="password_toggle"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:inputType="textPassword"
+                        android:id="@+id/passwords"
+                        android:ems="10"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/rubik"
+                        android:textStyle="normal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:textSize="11sp"
+                    android:text="Forget Password?"
+                    android:fontFamily="@font/rubik"
+                    android:textAlignment="textEnd"
+                    android:textColor="#616161"
+                    android:textStyle="normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <!--komponen berikut adalah komponen linearlayout yang di dalamnya berisi
+             material TextInputlayout dan textInputeditText untuk inputan berupa username atau
+             email dari user-->
+            <LinearLayout
+                android:id="@+id/singUpLayout"
+                android:background="@color/white"
+                android:padding="25dp"
+                android:visibility="gone"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:hint="Email or User Name"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    app:shapeAppearanceOverlay="@style/Button4"
+                    app:hintTextColor="#4E4A4A"
+                    app:boxStrokeColor="#4E4A4A"
+                    app:boxStrokeWidth="1dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:inputType="textPersonName|textEmailAddress"
+                        android:id="@+id/eMails"
+                        android:ems="10"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"
+                        android:textStyle="normal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:hint="Password"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    app:shapeAppearanceOverlay="@style/Button4"
+                    app:hintTextColor="#4E4A4A"
+                    app:boxStrokeColor="#4E4A4A"
+                    app:boxStrokeWidth="1dp"
+                    app:endIconMode="password_toggle"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:inputType="textPassword"
+                        android:id="@+id/passwordss"
+                        android:ems="10"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"
+                        android:textStyle="normal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:hint="Confirm Password"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    app:shapeAppearanceOverlay="@style/Button4"
+                    app:hintTextColor="#4E4A4A"
+                    app:boxStrokeColor="#4E4A4A"
+                    app:boxStrokeWidth="1dp"
+                    app:endIconMode="password_toggle"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:inputType="textPassword"
+                        android:id="@+id/passwords01"
+                        android:ems="10"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"
+                        android:textStyle="normal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+            <!-- dan di bawah ini merupakan komponen button login dengan lebar sesuai dengan ukuran layar dab
+            tingginya disesuaikan dengan konten-->
+            <Button
+                android:id="@+id/btn_signIn"
+                android:text="@string/log_in"
+                android:textSize="17sp"
+                android:textAllCaps="false"
+                android:elevation="15dp"
+                android:gravity="center"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:textColor="@color/textColor"
+                android:fontFamily="@font/rubik"
+                android:layout_gravity="center"
+                app:shapeAppearanceOverlay="@style/Button5"
+                app:backgroundTint="@color/pinkColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="OR"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:textStyle="normal"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textColor="#474646"
+                android:fontFamily="@font/rubik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!-- komponen linearLayout di bawah ini merupakan komponen layout untuk menambahkan gambar
+            berupa ikon-ikon dari sosial media yang ingin ditampilkan, yaitu berupa ikon google, ikon facebook dan ikon twitter
+            lebar dari linear layout ini disesuaikan dengan screen size, sedangkan untuk tingginya disesuaikan dengan isi konten yang
+            terdapat di dalam layout ini. LinearLayout ini mempunyai gravity untuk inside view nya yaitu center, sedangkan layout ini sendiri
+            berada di posisi tengah dari ukuran layar-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:src="@drawable/ic_facebook"
+                    android:layout_margin="10dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"/>
+                <ImageView
+                    android:src="@drawable/ic_google"
+                    android:layout_margin="10dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"/>
+                <ImageView
+                    android:src="@drawable/ic_twitter"
+                    android:layout_margin="10dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
